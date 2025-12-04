@@ -39,15 +39,15 @@ if __name__ == "__main__":
                      'text_kana', 'text_phone']:
         # 全データを読み込みモードで，/評価/開発/学習データリストを書き込みモードで開く
         with open(os.path.join(all_dir, filename), 
-                  mode='r') as all_file, \
+                  mode='r' , encoding='utf-8') as all_file, \
                   open(os.path.join(out_eval_dir, filename), 
-                  mode='w') as eval_file, \
+                  mode='w' , encoding='utf-8') as eval_file, \
                   open(os.path.join(out_dev_dir, filename), 
-                  mode='w') as dev_file, \
+                  mode='w' , encoding='utf-8') as dev_file, \
                   open(os.path.join(out_train_small_dir, filename), 
-                  mode='w') as train_small_file, \
+                  mode='w' , encoding='utf-8') as train_small_file, \
                   open(os.path.join(out_train_large_dir, filename), 
-                  mode='w') as train_large_file:
+                  mode='w' , encoding='utf-8') as train_large_file:
             # 1行ずつ読み込み，評価/開発/学習データリストに書き込んでいく
             for i, line in enumerate(all_file):
                 if i < 250:

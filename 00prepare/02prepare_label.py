@@ -27,16 +27,16 @@ if __name__ == "__main__":
     os.makedirs(out_label_dir, exist_ok=True)
 
     # ラベルデータを読み込む
-    with open(original_label, mode='r') as yamlfile:
+    with open(original_label, mode='r'  , encoding='utf-8') as yamlfile:
         label_info = yaml.safe_load(yamlfile)
 
     # キャラクター/かな/音素のラベルファイルを書き込みモードで開く
     with open(os.path.join(out_label_dir, 'text_char'), 
-              mode='w') as label_char, \
+              mode='w' , encoding='utf-8') as label_char, \
               open(os.path.join(out_label_dir, 'text_kana'), 
-              mode='w') as label_kana, \
+              mode='w' , encoding='utf-8') as label_kana, \
               open(os.path.join(out_label_dir, 'text_phone'), 
-              mode='w') as label_phone:
+              mode='w' , encoding='utf-8') as label_phone:
         # BASIC5000_0001 ~ BASIC5000_5000 に対して処理を繰り返し実行
         for i in range(5000):
             # 発話ID
